@@ -1,0 +1,43 @@
+{
+  "index": "/index.html",
+  "assetGroups": [{
+    "name": "app",
+    "installMode": "prefetch",
+    "resources": {
+      "files": [
+        "/favicon.ico",
+        "/index.html",
+        "/*.css",
+        "/*.js"
+      ],
+      "urls":[
+        "https://fonts.googleapis.com/css?family=Open+Sans:300,400,700",
+        "https://cdnjs.cloudflare.com/ajax/libs/weather-icons/1.2/css/weather-icons.min.css",
+        "//cdn.apixu.com/weather/**"
+      ]
+    }
+  }, {
+    "name": "assets",
+    "installMode": "lazy",
+    "updateMode": "prefetch",
+    "resources": {
+      "files": [
+        "/assets/**"
+      ]
+    }
+  }],
+  "dataGroups":[
+    {
+      "name": "weather-api",
+      "urls":[
+        "https://api.apixu.com/v1/current.json?key=a89b1721c3b44eb09de182716182407&q=Jakarta"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 20,
+        "maxAge": "1h",
+        "timeout": "5s"
+      }
+    }
+  ]
+}
