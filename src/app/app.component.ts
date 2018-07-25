@@ -21,6 +21,7 @@ export class AppComponent {
   ngOnInit(){
     this.wApiService.getWeather().subscribe(result=>{
       console.log(result);
+      console.log("test");
       this.weather = result;
     })
   }
